@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zed - AI对话助手</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- 侧边栏 -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                    <span>Zed AI</span>
+                </div>
+                <button class="new-chat-btn" id="newChatBtn">
+                    <i class="fas fa-plus"></i>
+                    新对话
+                </button>
+            </div>
+            
+            <div class="chat-history" id="chatHistory">
+                <!-- 对话历史将动态插入 -->
+            </div>
+            
+            <div class="sidebar-footer">
+                <div class="settings-btn">
+                    <i class="fas fa-cog"></i>
+                    <span>设置</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 主聊天区域 -->
+        <div class="main-content">
+            <div class="chat-header">
+                <div class="chat-title">
+                    <i class="fas fa-comments"></i>
+                    <span id="chatTitle">AI 助手</span>
+                </div>
+                <div class="chat-actions">
+                    <button class="action-btn" id="clearBtn">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                    <button class="action-btn" id="exportBtn">
+                        <i class="fas fa-download"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="chat-container" id="chatContainer">
+                <div class="welcome-message">
+                    <div class="welcome-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h2>欢迎使用 Zed AI</h2>
+                    <p>我是你的AI助手，可以帮你解答问题、协助工作或进行有趣的对话。</p>
+                    <div class="suggestion-chips">
+                        <button class="chip" data-text="介绍一下你自己">介绍一下你自己</button>
+                        <button class="chip" data-text="帮我写一首诗">帮我写一首诗</button>
+                        <button class="chip" data-text="解释什么是人工智能">解释什么是人工智能</button>
+                        <button class="chip" data-text="推荐一些学习资源">推荐一些学习资源</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <textarea 
+                        id="messageInput" 
+                        placeholder="输入你的消息..."
+                        rows="1"
+                    ></textarea>
+                    <button id="sendBtn" class="send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="input-footer">
+                    <span class="input-hint">按 Enter 发送，Shift + Enter 换行</span>
+                    <div class="status-indicator">
+                        <span class="status-dot"></span>
+                        <span id="statusText">准备就绪</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 加载指示器 -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>AI正在思考中...</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
